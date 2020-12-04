@@ -1,10 +1,11 @@
+
 # CDARTS
 
 ## 介绍
 
-CDARTS 在搜索和评估网络之间构建了循环反馈机制。 首先，搜索网络会生成初始结构用于评估，以便优化评估网络的权重。 然后，通过分类中通过的标签，以及评估网络中特征蒸馏的正则化来进一步优化搜索网络中的架构。 重复上述循环来优化搜索和评估网路，从而使结构得到训练，成为最终的评估网络。
+[CDARTS](https://arxiv.org/pdf/2006.10724.pdf) builds a cyclic feedback mechanism between the search and evaluation networks. 首先，搜索网络会生成初始结构用于评估，以便优化评估网络的权重。 然后，通过分类中通过的标签，以及评估网络中特征蒸馏的正则化来进一步优化搜索网络中的架构。 重复上述循环来优化搜索和评估网路，从而使结构得到训练，成为最终的评估网络。
 
-在 `CdartsTrainer` 的实现中，首先分别实例化了两个 Model 和 Mutator。 第一个 Model 被称为"搜索网络"，使用 `RegularizedDartsMutator` 来进行变化。它与 `DartsMutator` 稍有差别。 第二个 Model 是“评估网络”，它里用前面搜索网络的 Mutator 来创建了一个离散的 Mutator，来每次采样一条路径。 Trainer 会交替训练 Model 和 Mutator。 如果对 Trainer 和 Mutator 的实现感兴趣，可参考[这里](#reference)。
+在 `CdartsTrainer` 的实现中，首先分别实例化了两个 Model 和 Mutator。 第一个 Model 被称为"搜索网络"，使用 `RegularizedDartsMutator` 来进行变化。它与 `DartsMutator` 稍有差别。 第二个 Model 是“评估网络”，它里用前面搜索网络的 Mutator 来创建了一个离散的 Mutator，来每次采样一条路径。 Trainer 会交替训练 Model 和 Mutator。 Users can refer to [paper](https://arxiv.org/pdf/2006.10724.pdf) if they are interested in more details on these trainers and mutators.
 
 ## 重现结果
 
@@ -43,15 +44,16 @@ bash run_retrain_cifar.sh
 ### PyTorch
 
 ```eval_rst
-..  autoclass:: nni.nas.pytorch.cdarts.CdartsTrainer
+..  autoclass:: nni.algorithms.nas.pytorch.cdarts.CdartsTrainer
     :members:
 
-..  autoclass:: nni.nas.pytorch.cdarts.RegularizedDartsMutator
+..  autoclass:: nni.algorithms.nas.pytorch.cdarts.RegularizedDartsMutator
     :members:
 
-..  autoclass:: nni.nas.pytorch.cdarts.DartsDiscreteMutator
+..  autoclass:: nni.algorithms.nas.pytorch.cdarts.DartsDiscreteMutator
     :members:
 
-..  autoclass:: nni.nas.pytorch.cdarts.RegularizedMutatorParallel
+..  autoclass:: nni.algorithms.nas.pytorch.cdarts.RegularizedMutatorParallel
     :members:
 ```
+

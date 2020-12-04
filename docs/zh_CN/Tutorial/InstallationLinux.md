@@ -18,13 +18,13 @@
 先决条件：`python 64-bit >=3.6`, `git`, `wget`
 
     bash
-      git clone -b v1.8 https://github.com/Microsoft/nni.git
+      git clone -b v1.9 https://github.com/Microsoft/nni.git
       cd nni
       ./install.sh
 
 ### 在 Docker 映像中使用 NNI
 
-也可将 NNI 安装到 docker 映像中。 参考[这里](../deployment/docker/README.md)来生成 NNI 的 Docker 映像。 也可通过此命令从 Docker Hub 中直接拉取 NNI 的映像 `docker pull msranni/nni:latest`。
+也可将 NNI 安装到 docker 映像中。 Please follow the instructions [here](https://github.com/Microsoft/nni/tree/v1.9/deployment/docker/README.md) to build an NNI docker image. 也可通过此命令从 Docker Hub 中直接拉取 NNI 的映像 `docker pull msranni/nni:latest`。
 
 ## 验证安装
 
@@ -33,7 +33,7 @@
 * 通过克隆源代码下载示例。
     
     ```bash
-    git clone -b v1.8 https://github.com/Microsoft/nni.git
+    git clone -b v1.9 https://github.com/Microsoft/nni.git
     ```
 
 * 运行 MNIST 示例。
@@ -117,3 +117,4 @@ You can use these commands to get more information about the experiment
 * [如何在 OpenPAI 上运行 Experiment？](../TrainingService/PaiMode.md)
 * [如何通过 Kubeflow 在 Kubernetes 上运行 Experiment？](../TrainingService/KubeflowMode.md)
 * [如何通过 FrameworkController 在 Kubernetes 上运行 Experiment？](../TrainingService/FrameworkControllerMode.md)
+* [How to run an experiment on Kubernetes through AdaptDL?](../TrainingService/AdaptDLMode.md)

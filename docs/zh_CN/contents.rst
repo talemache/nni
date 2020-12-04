@@ -17,6 +17,7 @@ Neural Network Intelligence
     特征工程<feature_engineering>
     参考<reference>
     示例与解决方案<CommunitySharings/community_sharings>
+    Research and Publications <ResearchPublications.md>
     常见问题 <Tutorial/FAQ>
     如何贡献 <contribution>
     更改日志 <Release>
